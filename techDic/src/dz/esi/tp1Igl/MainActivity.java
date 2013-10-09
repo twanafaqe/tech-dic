@@ -3,7 +3,8 @@ package dz.esi.tp1Igl;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.EditText;
-import dz.esi.techdic.R;
+
+import com.example.techdic.R;
 
 public class MainActivity extends Activity {
 
