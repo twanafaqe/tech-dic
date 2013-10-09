@@ -2,6 +2,7 @@ package dz.esi.tp1Igl;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.EditText;
 import dz.esi.techdic.R;
 
 public class MainActivity extends Activity {
@@ -11,6 +12,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+    EditText t;
 
     
 }
