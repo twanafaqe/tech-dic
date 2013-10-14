@@ -5,7 +5,6 @@ package dz.esi.tp1Igl.activities;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
 import java.util.Scanner;
 
 import android.annotation.SuppressLint;
@@ -18,14 +17,13 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
-import android.widget.TabWidget;
-
 import com.example.techDic.R;
 
 import dz.esi.tp1Igl.modal.Word;
 import dz.esi.tp1Igl.service.DataBaseHandler;
 import dz.esi.tp1Igl.service.StableArrayAdapter;
 
+@SuppressLint("NewApi")
 @SuppressWarnings("deprecation")
 public class MainActivity extends TabActivity {
    
@@ -87,8 +85,7 @@ public class MainActivity extends TabActivity {
 					tabWidget.getChildAt(i).setBackgroundResource(R.drawable.tabbg);
 			}*/
 		   
-   @SuppressLint("NewApi")
-public void fillDB(String filePath,int whatF)
+   public void fillDB(String filePath,int whatF)
 	{
 	
 		//0 pr englais 1 pr français
@@ -164,6 +161,14 @@ public void fillDB(String filePath,int whatF)
 
 		 
 		scanner.close();
+}
+
+public TabHost getMonTabHost() {
+	return monTabHost;
+}
+
+public void setMonTabHost(TabHost monTabHost) {
+	this.monTabHost = monTabHost;
 }
 
 		}

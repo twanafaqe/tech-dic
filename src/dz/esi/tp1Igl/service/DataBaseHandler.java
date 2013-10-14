@@ -135,6 +135,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
     //getting all words beginnig with a letter
 	
 	
+	@SuppressWarnings({ })
 	public List<Word> getWords(String tabName, char letter){
 		
 		int i,beg=1,end=1; List<Word> wordsList=new ArrayList<Word>();
