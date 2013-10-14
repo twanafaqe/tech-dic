@@ -163,7 +163,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 			if (i==letter) break;
 		}
 			SQLiteDatabase db = this.getReadableDatabase();
-			Cursor cursor = db.query(TABLE_COUNT, new String[] { KEY_ID_LETTER,
+			Cursor cursor = db.query(TABLE_COUNT, new String[] { KEY_ID_LETTER,KEY_LETTER,
 					KEY_FRE, KEY_ENG },
 					KEY_ID_LETTER + "=?", new String[] { String.valueOf(k) }, null,
 					null, null, null);
@@ -171,10 +171,10 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 				cursor.moveToFirst();
 				if (tabName.equals("Fr")) 
 					{
-					ret=Integer.parseInt(cursor.getString(1));
+					ret=Integer.parseInt(cursor.getString(2));
 					Log.d("ret", String.valueOf(ret));
 					}
-				else ret= Integer.parseInt(cursor.getString(2));}
+				else ret= Integer.parseInt(cursor.getString(3));}
 			
 	           
 		return ret;
