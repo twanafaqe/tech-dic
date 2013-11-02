@@ -22,18 +22,70 @@ import dz.esi.tp1Igl.modal.Word;
 import dz.esi.tp1Igl.service.DataBaseHandler;
 import dz.esi.tp1Igl.service.StableArrayAdapter;
 
+/**
+ * La classe qui controle la saisie de l'utilisateur
+ * leur de sa recherche d'un mot dans le dictionnaire.
+ * 
+ * @author Aissani Amina & Tedjar Nour El Imane
+ * @version 3.0
+ * 
+ *
+ */
+
+
 public class SearchActivity extends Activity {
 	
+	/**
+     *  db instanciation de DataBaseHandler
+     *  
+     *  @see DataBaseHandler
+     */
 	DataBaseHandler db = new DataBaseHandler(this);
+	/**
+     * tw Tableau de Word 
+     * 
+     * @see Word
+     */
     Word [] tw;
+    /**
+     * ad instanciation de StableArrayAdapter
+     * 
+     * @see StableArrayAdapter
+     */
     StableArrayAdapter ad;
+    /**
+     * word un tableau de String,utiliser pour contenir des words des objets Word
+     * dans la methode onTextChanged.
+     * 
+     */
     String [] word;
+    /**
+     *def un tableau de String,utiliser pour contenir des définitions des objets Word
+     * dans la methode onTextChanged.
+     * 
+     */
     String [] def;
+    /**
+     * idOng une chaine de carctère utilisé temporairement.
+     */
     String idOng;
+    /**
+     * first une variable booléenne utiliser pour le conditionnement. 
+     */
     boolean first=true;
     
+	/**
+	 * list1 de type listView pour qu'elle affiche les mots à l'interface .
+	 */
 	ListView list1;
+	/**
+	 * def1 de type EditText c'est une case blanche qui aparrait à l'interface pour 
+	 * saisir le mot à définir.
+	 */
 	EditText def1;
+	/**
+	 * oldPos un entier utilisé comme indice.
+	 */
 	int oldPos;
 
 	@Override
@@ -77,6 +129,12 @@ public class SearchActivity extends Activity {
 	  	// TODO Auto-generated method stub
 	  	
 	      }
+	      
+	      /**
+	  	 * onTextChanged filtre les mots du dictionnaire au fur et à mesure que l'utilisateur
+	  	 * introduit son mot recherché, a la fin c'est le mot existe il va lui etre afficher 
+	  	 * sinon si vide
+	  	 */
 
 	      @Override
 	      public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
@@ -141,6 +199,7 @@ public class SearchActivity extends Activity {
 	 }
 
 	@Override
+	
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.activity_search, menu);
