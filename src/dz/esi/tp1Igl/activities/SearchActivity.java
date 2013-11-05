@@ -3,8 +3,12 @@ package dz.esi.tp1Igl.activities;
 import java.util.List;
 
 import android.app.Activity;
+import android.os.Handler;
+import android.os.Message;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -87,7 +91,9 @@ public class SearchActivity extends Activity {
 	 * oldPos un entier utilisé comme indice.
 	 */
 	int oldPos;
+	
 
+    
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -97,22 +103,14 @@ public class SearchActivity extends Activity {
 	    Bundle b= this.getIntent().getExtras();
 	    idOng= b.getString("idOng");
 	    
-	    
-	  /*  int i;
-	      List<Word> lw = db.getWords("En", 'c');
-	      tw = lw.toArray(new Word[lw.size()]);
-	      word= new String[lw.size()];
-	      def= new String[lw.size()];
-      
-	      
-       for (i=0;i<lw.size();i++){
-           word[i]=tw[i].getWord();
-           def[i]=tw[i].getDef();
-	      }*/
 	      
 	      
 	      list1=(ListView) findViewById(R.id.list1);
 	      def1=(EditText) findViewById(R.id.def1);
+	     
+	      
+	    
+	       
 	      
 	      /********************************************** filtrage de recherche ****************************************************/
 	      def1.addTextChangedListener(new TextWatcher(){
@@ -144,6 +142,7 @@ public class SearchActivity extends Activity {
 	      	{
 		      		int i;
 		      		first=false;
+		      		if(cs.length()==1){}
 		  	      List<Word> lw = db.getWords(idOng, cs.charAt(0));
 		  	      tw = lw.toArray(new Word[lw.size()]);
 		  	      word= new String[lw.size()];
@@ -181,10 +180,12 @@ public class SearchActivity extends Activity {
       public void onItemClick (AdapterView<?> arg0, View arg1, int position, long id) {
       	
       	Builder builder = new AlertDialog.Builder(SearchActivity.this); 
-          builder.setTitle(" Definition "); 
-        
+          
+          
           oldPos =  (int) SearchActivity.this.ad.getItemId(position);
+          Word w=db.getWord(oldPos+1,idOng);
           builder.setMessage( def[oldPos]); 
+          builder.setTitle(w.getWord());
           builder.setPositiveButton("Valider", null);
           
           builder.show(); 
@@ -205,5 +206,6 @@ public class SearchActivity extends Activity {
 		getMenuInflater().inflate(R.menu.activity_search, menu);
 		return true;
 	}
+
 
 }

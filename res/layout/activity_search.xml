@@ -9,13 +9,14 @@
           android:id="@+id/def1"
           android:layout_width="fill_parent"
           android:layout_height="wrap_content"
-          android:hint="Définir.."
+          android:hint="@string/definir"
           android:inputType="textVisiblePassword" />
 
       <ListView
           android:id="@+id/list1"
           android:layout_width="fill_parent"
-          android:layout_height="wrap_content" >
+          android:layout_height="wrap_content"
+          style="@style/List" >
       </ListView>
   
                 
