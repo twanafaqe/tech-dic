@@ -92,8 +92,7 @@ public class MainActivity extends TabActivity {
 			   
 		      super.onCreate(savedInstanceState);
 		      setContentView(R.layout.activity_main);
-		      
-		     // fillDB("DefEnh.txt", 0);
+
 		      TabHost tabHost = getTabHost();
 
 				// Tab pour le français

@@ -131,12 +131,6 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 	 */
 	private static final String KEY_ENG = "eng";
 
-	/**
-	 * Cette variable est utilisée pour construire le progressBar
-	 * dans SearchActivity pour attendre la fin d'obtention des
-	 * mot correspondant à la lettre tapée
-	 */
-	private int progress=0;
 	
 	/**
 	 * DataBaseHandler le constructeur de la classe
@@ -194,7 +188,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 	 * @return une liste de Word
 	 * @see Word
 	 */
-	public List<Word> getAllWords(String tabName,int begin,int end) {
+	public List<Word> getAllWordsBetweenTwoLetters(String tabName,int begin,int end) {
 		
 		List<Word> wordList = new ArrayList<Word>();
 		// Select All Query
@@ -291,7 +285,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 		
 		Log.d("end", String.valueOf(end));
 		
-		wordsList=getAllWords(tabName, beg, end);
+		wordsList=getAllWordsBetweenTwoLetters(tabName, beg, end);
 		
 		return wordsList;
 	}
@@ -333,20 +327,5 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 		return ret;
 
 }
-	
-	
-	
-	/**
-	 * @return progress
-	 */
-	public int getProgress() {
-		return progress;
-	}
 
-	/**
-	 * @param progress
-	 */
-	public void setProgress(int progress) {
-		this.progress = progress;
-	}
 }
