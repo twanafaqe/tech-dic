@@ -74,6 +74,7 @@ public class MainActivity extends TabActivity {
 	       
 	    
 	    public TabSpec fr;
+	    
 	    public TabSpec en;
 	    
 	    public Intent i2;
