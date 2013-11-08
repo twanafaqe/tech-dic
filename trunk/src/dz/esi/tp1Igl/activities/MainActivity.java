@@ -102,7 +102,7 @@ public class MainActivity extends TabActivity {
 			    Intent i1 = new Intent(this, SearchActivity.class);
 				i1.putExtra("idOng", "Fr");
 				
-				Toast.makeText(this,String.valueOf(db.getTableCount("Fr")),Toast.LENGTH_LONG).show();
+			//	Toast.makeText(this,String.valueOf(((Object) db).getTableCount("Fr")),Toast.LENGTH_LONG).show();
 
 				// non d'onglet
 				fr.setIndicator("Français",getResources().getDrawable(R.drawable.ic_launcher));
@@ -165,7 +165,7 @@ public void fillDB(String filePath,int whatF)
 		char a; int i,j=0;
 		 
 		// On boucle sur chaque champ detecté
-		while (scanner.hasNextLine() && j<=5000 ) {
+		while (scanner.hasNextLine() && j<=6000 ) {
 			
 		    
 			String line = scanner.nextLine();
