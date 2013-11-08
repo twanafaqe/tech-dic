@@ -101,6 +101,8 @@ public class MainActivity extends TabActivity {
 
 			    Intent i1 = new Intent(this, SearchActivity.class);
 				i1.putExtra("idOng", "Fr");
+				
+				Toast.makeText(this,String.valueOf(db.getTableCount("Fr")),Toast.LENGTH_LONG).show();
 
 				// non d'onglet
 				fr.setIndicator("Français",getResources().getDrawable(R.drawable.ic_launcher));
