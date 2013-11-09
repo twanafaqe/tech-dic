@@ -141,7 +141,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 		// TODO Auto-generated constructor stub
 	}
-
+	
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		// TODO Auto-generated method stub
@@ -327,5 +327,28 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 		return ret;
 
 }
+	
+	
+	/**
+	 * @param tabName
+	 * @return le nombre de mots dans une table
+	 */
+	public int getTableCount(String tabName) {
+		String countQuery = "SELECT  * FROM " + tabName;
+		SQLiteDatabase db = this.getReadableDatabase();
+		Cursor cursor = db.rawQuery(countQuery, null);
+		   int count = 0;
+		   try {
+		      if (cursor.moveToFirst()) {
+		         count = cursor.getCount();
+		      }
+		      return count;
+		   }
+		   finally {
+		      if (cursor != null) {
+		         cursor.close();
+		      }
+	}
+	}
 
 }
