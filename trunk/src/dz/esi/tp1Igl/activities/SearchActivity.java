@@ -101,7 +101,8 @@ public class SearchActivity extends Activity {
 		
 		//recuperer l'idp
 	    Bundle b= this.getIntent().getExtras();
-	    idOng= b.getString("idOng");
+	    if(b==null) idOng="Fr";
+	    else idOng= b.getString("idOng");
 	    
 	      
 	      
@@ -183,9 +184,8 @@ public class SearchActivity extends Activity {
           
           
           oldPos =  (int) SearchActivity.this.ad.getItemId(position);
-          Word w=db.getWord(oldPos+1,idOng);
           builder.setMessage( def[oldPos]); 
-          builder.setTitle(w.getWord());
+          builder.setTitle(word[oldPos]);
           builder.setPositiveButton("Valider", null);
           
           builder.show(); 
