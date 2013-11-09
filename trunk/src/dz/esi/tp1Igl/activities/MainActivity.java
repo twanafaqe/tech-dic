@@ -5,7 +5,6 @@ package dz.esi.tp1Igl.activities;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 
 import android.annotation.SuppressLint;
@@ -17,7 +16,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
-import android.widget.Toast;
 
 import com.example.techDic.R;
 
@@ -27,6 +25,7 @@ import dz.esi.tp1Igl.service.StableArrayAdapter;
 
 /**
  * <b>MainActivity c'est la classe qui affiche l'interface de l'application à l'utilisateur</b>
+ * <b> dés qu'il clique sur l'icon dans son menu<b>
  * 
  * @author Aissani Amina & Tedjar Nour El imane
  * @version 2.0
@@ -73,12 +72,31 @@ public class MainActivity extends TabActivity {
 	    String [] def;
 	       
 	    
+	    /**
+	     * fr Onglet dans tabHost 
+	     * @see TabHost
+	     */
 	    public TabSpec fr;
 	    
+	    /**
+	     * en Onglet dans tabHost 
+	     * @see TabHost
+	     * 
+	     */
 	    public TabSpec en;
 	    
+	    /**
+	     * i2 intent afficher la boite de dialogue 
+	     * leur de la séléction d'un mot de la liste 
+	     * @see Intent
+	     */
 	    public Intent i2;
 	    
+	    /**
+	     * enIm variable qui va contenir une image (icon) 
+	     * @see Drawable
+	     * 
+	     */
 	    public static Drawable enIm;
 	    /**
 	     * Le constructeur de la classe MainActivity par défaut.
@@ -102,10 +120,11 @@ public class MainActivity extends TabActivity {
 			    Intent i1 = new Intent(this, SearchActivity.class);
 				i1.putExtra("idOng", "Fr");
 
-				// non d'onglet
-				fr.setIndicator("Français",getResources().getDrawable(R.drawable.ic_launcher));
+				// nom d'onglet
+				
+				fr.setIndicator("Français",getResources().getDrawable(R.drawable.fre));
 				fr.setContent(i1);
-
+				tabHost.addTab(fr);
 
 				// Tab pour l'anglais
 				 en = tabHost.newTabSpec("English");
@@ -114,13 +133,19 @@ public class MainActivity extends TabActivity {
 				 i2.putExtra("idOng", "En");
 				
 				 //nom d'onglet
+				 enIm=getResources().getDrawable(R.drawable.eng);
 				 en.setIndicator("English", enIm);
 				 en.setContent(i2);
 				
 			   	// Ajouter tous les TabSpec to TabHost
-				 tabHost.addTab(fr);
+				 
 				 tabHost.addTab(en);
 				//initTabsAppearance(getTabWidget());
+				 
+				/* tabHost.getTabWidget().getChildAt(0).setBackgroundColor(getResources().getColor(R.color.white));
+				 tabHost.getTabWidget().getChildAt(0).setBackgroundResource(R.drawable.fr);
+				    tabHost.getTabWidget().getChildAt(1).setBackgroundColor(getResources().getColor(R.color.blue));
+				    tabHost.getTabWidget().getChildAt(1).getResources().getDrawable(R.drawable.eng);*/
 		   }
 		  /* private void initTabsAppearance(TabWidget tabWidget) {
 				// Change background

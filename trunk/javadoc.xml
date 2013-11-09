@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project default="javadoc">
     <target name="javadoc">
-        <javadoc access="private" author="true" classpath="libs/android-support-v4.jar" destdir="doc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="com.example.techDic,dz.esi.tp1Igl.service,dz.esi.tp1Igl.modal,dz.esi.tp1Igl.activities" source="1.6" sourcepath="src;gen" splitindex="true" use="true" version="true"/>
+        <javadoc access="private" author="true" classpath="C:\Users\home\Desktop\eclipse\eclipse\plugins\org.junit_3.8.2.v3_8_2_v20100427-1100\junit.jar;libs/android-support-v4.jar" destdir="doc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="dz.esi.tp1Igl.activities" source="1.6" sourcepath="gen;src" splitindex="true" use="true" version="true"/>
     </target>
 </project>

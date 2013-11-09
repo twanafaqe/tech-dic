@@ -14,8 +14,8 @@ import dz.esi.tp1Igl.modal.Word;
 
 
 /**
- * <p>DataBaseHandler permet de créer les tables dans la base de données (BD).</p>
- * <p>Les tables crées dans la BD sont les suivants : </p>
+ * <b>DataBaseHandler permet de créer les tables dans la base de données (BD).</b>
+ * <b>Les tables crées dans la BD sont les suivants : </b>
  * <lu>
  * <li>TABLE_FRENCH </li>
  * <li>TABLE_ENGLISH</li>
@@ -262,9 +262,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
                 return w;
         }
         
-    //getting all words beginnig with a letter
-        
-        
+ 
         /**
          * getWords nous permet de récupèrer une liste de tous les Words  
          * qui commence par la lettre (lettre) indiquée en paramètre  de la table 
@@ -275,8 +273,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
          * 
          * @see Word
          */
-        @SuppressWarnings({ })
-        public List<Word> getWords(String tabName, char letter){
+		public List<Word> getWords(String tabName, char letter){
                 
                 int beg=1,end=1; List<Word> wordsList=new ArrayList<Word>();
                       try{          
