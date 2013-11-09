@@ -3,12 +3,8 @@ package dz.esi.tp1Igl.activities;
 import java.util.List;
 
 import android.app.Activity;
-import android.os.Handler;
-import android.os.Message;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -27,8 +23,8 @@ import dz.esi.tp1Igl.service.DataBaseHandler;
 import dz.esi.tp1Igl.service.StableArrayAdapter;
 
 /**
- * La classe qui controle la saisie de l'utilisateur
- * leur de sa recherche d'un mot dans le dictionnaire.
+ *<b> La classe qui controle la saisie de l'utilisateur</b>
+ * <b>leur de sa recherche d'un mot dans le dictionnaire.</b>
  * 
  * @author Aissani Amina & Tedjar Nour El Imane
  * @version 3.0
