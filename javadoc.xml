@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project default="javadoc">
     <target name="javadoc">
-        <javadoc access="private" author="true" classpath="C:\Users\home\Desktop\eclipse\eclipse\plugins\org.junit_3.8.2.v3_8_2_v20100427-1100\junit.jar;libs/android-support-v4.jar" destdir="doc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="dz.esi.tp1Igl.activities" source="1.6" sourcepath="gen;src" splitindex="true" use="true" version="true"/>
+        <javadoc access="private" author="true" classpath="C:\Users\home\Desktop\eclipse\eclipse\plugins\org.junit_3.8.2.v3_8_2_v20100427-1100\junit.jar;libs/android-support-v4.jar" destdir="doc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="dz.esi.tp1Igl.modal,dz.esi.tp1Igl.activities,dz.esi.tp1Igl.service,com.example.techDic" source="1.6" sourcepath="gen;src" splitindex="true" use="true" version="true">
+            <link href="http://www.junit.org/junit/javadoc/3.8.1"/>
+        </javadoc>
     </target>
 </project>
