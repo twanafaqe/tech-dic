@@ -77,7 +77,7 @@ public class SearchActivity extends Activity {
 	/**
 	 * list1 de type listView pour qu'elle affiche les mots à l'interface .
 	 */
-	ListView list1;
+	public ListView list1;
 	/**
 	 * def1 de type EditText c'est une case blanche qui aparrait à l'interface pour 
 	 * saisir le mot à définir.
