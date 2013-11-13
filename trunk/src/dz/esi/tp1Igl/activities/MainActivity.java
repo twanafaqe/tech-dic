@@ -189,7 +189,7 @@ public void fillDB(String filePath,int whatF)
 		 
 		// On boucle sur chaque champ detecté
 
-		while (scanner.hasNextLine() && j<=7000 ) {
+		while (scanner.hasNextLine() && j<=8000 ) {
 
 			
 		    
