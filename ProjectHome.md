@@ -1,0 +1,1 @@
+Application Android dictionnaire français pour les mots techniques, pratique et facile à utiliser.
